@@ -8,7 +8,8 @@ client.on("ready", function () {
 
 client.on("message", function (msg) {
     console.log("Message reçu: " + msg + "\nDe: " + msg.author);
-    msg.reply("Hellow!");
+    if (msg.content.startsWith(";Ping"))
+        msg.reply("Pong!");
 });
 
 client.login("NTEzODM0NzM5NTg5NzA5ODI2.DtN06Q.7K5fD9J8TGN6KxC4hFadY8BuO84");
