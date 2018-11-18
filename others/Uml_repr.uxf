@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>90</y>
+      <w>260</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>General Map
+--
+var list_cmd = [Object Command];
+--
+/Vérifie et execute la comm-
+ande du message (list_cmd)
+function parse(msg);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>40</y>
+      <w>230</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Command
+--
+/Nom de la commande
+var cmd = new String()
+
+/Arguments que peut
+prendre la commande
+var args = [];
+--
+/Vérifie et ex la commande
+function parse(msg);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>370</y>
+      <w>260</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>PveMap
+--
+var list_cmd = [Object Command]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>220</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
