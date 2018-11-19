@@ -15,11 +15,11 @@ Map.prototype.parse = function(msgObj) {
     if (msgObj.content.startsWith(";")) {
         let i = 0;
         while (i < this.list_cmd.length) {
-            if (msgObj.content.startsWith(this.list_cmd[i])) {
+            if (msgObj.content.startsWith(this.list_cmd[i].name)) {
                 let args = msgObj.content.split(" ");
                 let cmd = args[0];
                 args = args.splice(1, args.length - 1);
-                Commands.execute(cmd, args, msgObj, this);
+                this.list_cmd[i].execute(args, msgObj, this);
             }
             i++;
         }
@@ -38,11 +38,11 @@ Map.prototype.parse = function(msgObj) {
  *  aggro(player): aggro Player (A enlever)
  */
 
-var regMap = new Map([";register", ";help"]);
+var regMap = new Map([Commands[";register"], Commands[";help"]]);
 
-var restMap = new Map([";send", ";duel", ";ls", ";add_friend", ";help"]);
+var restMap = new Map([Commands[";send"], Commands[";duel"], Commands[";ls"], Commands[";add_friend"], Commands[";help"]]);
 
-var questMap = new Map([";ls_quest", ";accept_quest", ";ls", ";send", ";duel", ";add_friend", ";help"]);
+var questMap = new Map([Commands[";ls_quest"], Commands[";accept_quest"], Commands[";ls"], Commands[";send"], Commands[";duel"], Commands[";add_friend"], Commands[";help"]]);
 
 ////var pvpMap = new Map([";aggro",";ls", ";send", ";duel", ";add_friend"]);
 
